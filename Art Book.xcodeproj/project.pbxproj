@@ -13,6 +13,8 @@
 		FC12175E1EF697E200EAA28E /* Art_Book.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC12175C1EF697E200EAA28E /* Art_Book.xcdatamodeld */; };
 		FC1217601EF697E200EAA28E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC12175F1EF697E200EAA28E /* Assets.xcassets */; };
 		FC1217631EF697E200EAA28E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC1217611EF697E200EAA28E /* LaunchScreen.storyboard */; };
+		FC12176B1EF6995600EAA28E /* detailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC12176A1EF6995600EAA28E /* detailsVC.swift */; };
+		FC12176D1EF69C3E00EAA28E /* select.png in Resources */ = {isa = PBXBuildFile; fileRef = FC12176C1EF69C3E00EAA28E /* select.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,9 @@
 		FC12175F1EF697E200EAA28E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC1217621EF697E200EAA28E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC1217641EF697E200EAA28E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC12176A1EF6995600EAA28E /* detailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailsVC.swift; sourceTree = "<group>"; };
+		FC12176C1EF69C3E00EAA28E /* select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = select.png; path = ../../select.png; sourceTree = "<group>"; };
+		FC12176E1EF6AEEF00EAA28E /* select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +61,11 @@
 		FC1217541EF697E200EAA28E /* Art Book */ = {
 			isa = PBXGroup;
 			children = (
+				FC12176C1EF69C3E00EAA28E /* select.png */,
+				FC12176E1EF6AEEF00EAA28E /* select.png */,
 				FC1217551EF697E200EAA28E /* AppDelegate.swift */,
 				FC1217571EF697E200EAA28E /* ViewController.swift */,
+				FC12176A1EF6995600EAA28E /* detailsVC.swift */,
 				FC1217591EF697E200EAA28E /* Main.storyboard */,
 				FC12175F1EF697E200EAA28E /* Assets.xcassets */,
 				FC1217611EF697E200EAA28E /* LaunchScreen.storyboard */,
@@ -126,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC1217631EF697E200EAA28E /* LaunchScreen.storyboard in Resources */,
+				FC12176D1EF69C3E00EAA28E /* select.png in Resources */,
 				FC1217601EF697E200EAA28E /* Assets.xcassets in Resources */,
 				FC12175B1EF697E200EAA28E /* Main.storyboard in Resources */,
 			);
@@ -139,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC1217581EF697E200EAA28E /* ViewController.swift in Sources */,
+				FC12176B1EF6995600EAA28E /* detailsVC.swift in Sources */,
 				FC1217561EF697E200EAA28E /* AppDelegate.swift in Sources */,
 				FC12175E1EF697E200EAA28E /* Art_Book.xcdatamodeld in Sources */,
 			);
@@ -275,6 +285,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7SH627DBA4;
 				INFOPLIST_FILE = "Art Book/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.atilsamancioglu.Art-Book";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -289,6 +300,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7SH627DBA4;
 				INFOPLIST_FILE = "Art Book/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.atilsamancioglu.Art-Book";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -316,6 +328,7 @@
 				FC1217691EF697E200EAA28E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
