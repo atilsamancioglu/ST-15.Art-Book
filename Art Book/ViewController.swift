@@ -83,6 +83,48 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+    //getting context
+    func getContext () -> NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }
+    //function for deleting respective datas
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            let moc = getContext()
+            
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Paintings")
+            
+            let result = try? moc.fetch(fetchRequest)
+            let resultData = result as! [NSManagedObject]
+            
+            for object in resultData {
+                if let name = object.value(forKey: "name") as? String {
+                    if name == nameArray[indexPath.row] {
+                        moc.delete(object)
+                        nameArray.remove(at: indexPath.row)
+                        yearArray.remove(at: indexPath.row)
+                        imageArray.remove(at: indexPath.row)
+                        artistArray.remove(at: indexPath.row)
+                        self.tableView.reloadData()
+                        do {
+                            try moc.save()
+                            print("saved!")
+                        } catch let error as NSError  {
+                            print("Could not save \(error), \(error.userInfo)")
+                        } catch {
+                            
+                        }
+                        break
+                    }
+                }
+            }
+            
+            
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return nameArray.count

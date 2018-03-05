@@ -14,7 +14,7 @@
 		FC1217601EF697E200EAA28E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC12175F1EF697E200EAA28E /* Assets.xcassets */; };
 		FC1217631EF697E200EAA28E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC1217611EF697E200EAA28E /* LaunchScreen.storyboard */; };
 		FC12176B1EF6995600EAA28E /* detailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC12176A1EF6995600EAA28E /* detailsVC.swift */; };
-		FC12176D1EF69C3E00EAA28E /* select.png in Resources */ = {isa = PBXBuildFile; fileRef = FC12176C1EF69C3E00EAA28E /* select.png */; };
+		FC46C7141F7CBDB7005BAAB6 /* select.png in Resources */ = {isa = PBXBuildFile; fileRef = FC12176E1EF6AEEF00EAA28E /* select.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,6 @@
 		FC1217621EF697E200EAA28E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC1217641EF697E200EAA28E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC12176A1EF6995600EAA28E /* detailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailsVC.swift; sourceTree = "<group>"; };
-		FC12176C1EF69C3E00EAA28E /* select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = select.png; path = ../../select.png; sourceTree = "<group>"; };
 		FC12176E1EF6AEEF00EAA28E /* select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,7 +60,6 @@
 		FC1217541EF697E200EAA28E /* Art Book */ = {
 			isa = PBXGroup;
 			children = (
-				FC12176C1EF69C3E00EAA28E /* select.png */,
 				FC12176E1EF6AEEF00EAA28E /* select.png */,
 				FC1217551EF697E200EAA28E /* AppDelegate.swift */,
 				FC1217571EF697E200EAA28E /* ViewController.swift */,
@@ -134,9 +132,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC1217631EF697E200EAA28E /* LaunchScreen.storyboard in Resources */,
-				FC12176D1EF69C3E00EAA28E /* select.png in Resources */,
 				FC1217601EF697E200EAA28E /* Assets.xcassets in Resources */,
 				FC12175B1EF697E200EAA28E /* Main.storyboard in Resources */,
+				FC46C7141F7CBDB7005BAAB6 /* select.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
