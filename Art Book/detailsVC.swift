@@ -91,8 +91,6 @@ class detailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         //swift 4
         //imageView.image = info[UIImagePickerControllerEditedImage] as? UIImage
 
-
-
         imageView.image = info[.originalImage] as? UIImage
         self.dismiss(animated: true, completion: nil)
     }
@@ -112,6 +110,10 @@ class detailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             newArt.setValue(year, forKey: "year")
         }
         
+        //swift4
+        // let data = UIImageJPEGRepresentation(imageView.image!, 0.5)
+        
+        //swift 4.2
         let data = imageView.image!.jpegData(compressionQuality: 0.5)
         newArt.setValue(data, forKey: "image")
         

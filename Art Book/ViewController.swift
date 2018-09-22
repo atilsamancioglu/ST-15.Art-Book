@@ -83,43 +83,45 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    //getting context
-    func getContext () -> NSManagedObjectContext {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.persistentContainer.viewContext
-    }
+ 
     //function for deleting respective datas
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            let moc = getContext()
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
             
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Paintings")
             
-            let result = try? moc.fetch(fetchRequest)
-            let resultData = result as! [NSManagedObject]
-            
-            for object in resultData {
-                if let name = object.value(forKey: "name") as? String {
-                    if name == nameArray[indexPath.row] {
-                        moc.delete(object)
-                        nameArray.remove(at: indexPath.row)
-                        yearArray.remove(at: indexPath.row)
-                        imageArray.remove(at: indexPath.row)
-                        artistArray.remove(at: indexPath.row)
-                        self.tableView.reloadData()
-                        do {
-                            try moc.save()
-                            print("saved!")
-                        } catch let error as NSError  {
-                            print("Could not save \(error), \(error.userInfo)")
-                        } catch {
-                            
+            do {
+                
+                let results = try context.fetch(fetchRequest)
+                
+                for result in results as! [NSManagedObject] {
+                    
+                    if let name = result.value(forKey: "name") as? String {
+                        if name == nameArray[indexPath.row] {
+                            context.delete(result)
+                            nameArray.remove(at: indexPath.row)
+                            artistArray.remove(at: indexPath.row)
+                            yearArray.remove(at: indexPath.row)
+                            imageArray.remove(at: indexPath.row)
+                            self.tableView.reloadData()
+                            do {
+                                try context.save()
+                            } catch {
+                                
+                            }
+                            break
                         }
-                        break
                     }
+                    
                 }
+                
+            } catch {
+                
             }
+            
             
             
         }
