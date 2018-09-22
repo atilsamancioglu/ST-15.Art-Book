@@ -86,8 +86,14 @@ class detailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        imageView.image = info[UIImagePickerControllerEditedImage] as? UIImage
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        //swift 4
+        //imageView.image = info[UIImagePickerControllerEditedImage] as? UIImage
+
+
+
+        imageView.image = info[.originalImage] as? UIImage
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -106,7 +112,7 @@ class detailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             newArt.setValue(year, forKey: "year")
         }
         
-        let data = UIImageJPEGRepresentation(imageView.image!, 0.5)
+        let data = imageView.image!.jpegData(compressionQuality: 0.5)
         newArt.setValue(data, forKey: "image")
         
         do {
@@ -123,3 +129,5 @@ class detailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     }
     
 }
+
+
